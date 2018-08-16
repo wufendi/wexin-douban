@@ -1,0 +1,10 @@
+<!--component/starts/starts.wxml-->
+<view>
+  <block wx:if="{{rank != 0.0}}">
+    <text wx:for="{{starsArray}}" wx:key="{{index}}" class='iconfont {{item}}'></text>
+    <text class='yellow rank' wx:if='{{rankShow}}'>{{rank}}</text>
+  </block>
+  <block  wx:else>
+   <text class='gray'>暂无评分</text>
+  </block>
+</view>

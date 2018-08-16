@@ -1,0 +1,46 @@
+/**index.wxss**/
+.title {
+    color: #111;
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 16px;
+}
+.title .more {
+  float: right;
+}
+.theaters-container,.comings-container{
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 750rpx;
+    padding: 10rpx 10rpx 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.film-item {
+    width: 32%;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}
+.img-div{
+  width:100%; 
+  height:340rpx;
+  overflow: hidden;
+}
+.film-item image{
+  width:100%; 
+  border-radius: 10rpx;
+}
+.film-item .film-name{
+  font-size: 14px;
+  font-weight: bold;
+  color:black;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: normal;
+}
+.desc{
+  font-size: 12px;
+  color:gray;
+}

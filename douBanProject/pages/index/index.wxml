@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title"> 影院热映 
+    <text class='more'>全部热映 <text class='iconfont icon-arrow-r'></text></text>
+  </view>
+  <view class='theaters-container'>
+    <view wx:for="{{hotFilmData}}" wx:key="{{index}}" class='film-item' data-id='{{item.id}}' bindtap="fileDetail">
+      <view class='img-div'>
+        <image src="{{item.images.small}}" mode="widthFix"/>
+      </view>
+      <text class='film-name'> {{item.title}}</text>
+      <starts stars='{{item.rating.stars}}' average='{{item.rating.average}}'/>
+    </view>
+  </view>
+  <view class="title"> 院线即将上映 
+    <text class='more'>全部99+ <text class='iconfont icon-arrow-r'></text></text>
+  </view>
+   <view class='comings-container'>
+      <view wx:for="{{comingSoonData}}" wx:key="{{index}}" class='film-item' data-id='{{item.id}}' bindtap="fileDetail">
+      <view class='img-div'>
+        <image src="{{item.images.small}}" mode="widthFix"/>
+      </view>
+      <text class='film-name'> {{item.title}}</text>
+      <view class='desc'>{{item.collect_count}}人想看</view>
+      </view>
+  </view>
+</view>
+

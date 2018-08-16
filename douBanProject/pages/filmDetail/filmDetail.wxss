@@ -1,0 +1,248 @@
+/* pages/filmDetail/fileDetail.wxss */
+view, image {
+  box-sizing: border-box;
+}
+.container{
+  position: relative;
+  padding: 30rpx;
+  background: rgba(0, 0, 0, 0.3);
+}
+.intro{ /*头部*/
+  display: flex;
+}
+.intro image{
+  width:320rpx;
+  border-radius: 10rpx;
+  margin-right: 30rpx;
+}
+.intro>view view{
+  margin-bottom: 20rpx;
+}
+.intro .desc{
+  color:#eee;
+  font-size: 12px;
+}
+.intro .operate{
+  display: flex;
+  justify-content: space-between;
+  color:#ffb712;
+  margin-top: 40rpx;
+}
+.operate>text{
+  padding: 20rpx 40rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  background: #fff;
+  color: black;
+  font-weight: bold;
+  width: 40%;
+}
+.operate>text:first-of-type{
+  margin-right: 30rpx;
+}
+.grade{
+ border-radius: 10rpx;
+ color:#fff;
+ font-size: 12px;
+ padding: 20rpx;
+ background: rgba(0,0,0,0.6);
+ margin-top: 30rpx;
+}
+.grade-content{
+  padding: 5rpx 30rpx;
+  display: flex;
+}
+.grade-content .rank-container{
+  flex-grow: 1;
+}
+.grade-content .rank-container .rank-list .label{
+  width: 100px;
+  font-size: 10px;
+}
+.font-large{
+  font-size: 16px;
+  font-weight: bold;
+}
+.font-big{
+  font-size: 24px;
+}
+.font-small{
+  font-size:10px;
+}
+.align-center{
+  text-align: center;
+}
+.white-color{
+  color: #fff;
+}
+.gray-color{
+  color:#ddd;
+}
+.text-right{
+  text-align: right;
+}
+.detail{
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color:gray;
+  padding-bottom: 20px;
+}
+.detail-right{
+  width:200rpx;
+  text-align: center;
+}
+.detail-right>view{
+  background: #fff;
+  padding:20rpx 10rpx;
+  box-shadow: 0 10rpx 30rpx gray;
+}
+.can-watch{
+  padding: 30rpx 0;
+  margin: 30rpx 0;
+  border-bottom: 1px solid gray; 
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+}
+.video-img image{
+  border-radius: 10px;
+  padding: 3px; 
+  width:20px;
+  height:20px;
+  margin-right: 5px;
+  background-color: #fff;
+}
+.can-watch>view:first-of-type{
+  font-weight: bold;
+}
+.icon-movie{
+  color:red;
+  margin-right: 10rpx;
+}
+.icon-arrow-r{
+  color: gray;
+}
+.title{
+  color: #fff;
+  padding: 30rpx 0 10rpx;
+  font-size: 14px;
+  font-weight: bold;
+}
+.tags{
+  overflow-x: auto;
+  white-space:nowrap;
+  padding-right: 5px;
+}
+.tags .tag{
+  padding:10rpx 30rpx;
+  background-color: rgba(0,0,0,0.6);
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+  border-radius: 15px;
+  color: #fff;
+}
+.review-container{
+  margin-top: 30rpx;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.6);
+  color:#fff;
+}
+.review-top{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.role-container{
+  display: flex;
+  color:gray;
+  width:100%;
+  overflow-x: auto;
+}
+.role-container .role-item{
+  width: 180rpx;
+  margin-right: 20rpx;
+}
+.role-container .role-item image{
+  width:180rpx;
+  height:257rpx;
+  border-radius: 10rpx;
+}
+.role-container .role-item>view{
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  display:-webkit-box;  
+  -webkit-box-orient:vertical; 
+}
+.role-container .role-item>view:first-of-type{
+  color:black;
+  margin-bottom: 10rpx;
+}
+.stage-container{
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  height:350rpx;
+}
+.stage-container .stage-item{
+  margin-right: 15rpx;
+  width: 350rpx;
+  height:350rpx;
+}
+.stage-item-more{
+ background: #ddd;
+}
+.stage-item-more>view{
+  width:350rpx;
+  text-align: center;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stage-item-more>view>view:first-of-type{
+  padding-bottom: 15rpx;
+  margin-bottom: 15rpx;
+  border-bottom: 1px solid #aaa;
+}
+.stage-container .stage-item image{
+  width: 350rpx;
+  height:350rpx;
+}
+.inline-block{
+  display: inline-block;
+}
+.user-info{
+  display: flex;
+  align-items: center;
+}
+.review-item image{
+  width:80rpx;
+  height:80rpx;
+  border-radius: 40rpx;
+}
+.user-name{
+  margin: 0 20rpx;
+  font-weight: bold;
+}
+.user-content{
+  padding-left: 100rpx;
+}
+.eclipse-4{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  display:-webkit-box;  
+  -webkit-box-orient:vertical; 
+}

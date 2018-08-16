@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "starts": "/component/starts/starts",
+    "rankstart": "/component/rankStart/rankStart"
+  }
+}

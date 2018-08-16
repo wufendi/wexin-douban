@@ -1,0 +1,29 @@
+@import "../../app.wxss";
+.container{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.container>view:first-of-type{
+  width:35px;
+  color: gray;
+  text-align: right;
+  margin-right: 5px;
+}
+.container>view:first-of-type>view{
+ float: right;
+}
+.container>view:last-of-type{
+  flex-grow: 1;
+  background-color: gray;
+}
+.container view{
+  height: 6px;
+}
+.yellow-bg{
+  background-color: #ffb712;
+}
+.iconfont{
+ font-size: 6px;
+}

@@ -1,0 +1,128 @@
+<!--pages/rankList/rankList.wxml-->
+<view class='container'>
+  <view class='tab' bindtap='changeTab'>
+    <text class='{{type == "top250" ? "active": ""}}' data-type='top250' >Top250</text>
+    <text class='{{type == "publicPraise" ? "active": ""}}' data-type='publicPraise'>口碑榜</text>
+    <text class='{{type == "usBox" ? "active": ""}}' data-type='usBox'>北美榜</text>
+    <text class='{{type == "newMovies" ? "active": ""}}' data-type='newMovies'>新片榜</text>
+  </view>
+  <view class='container-content'>
+    <view class='list-container'>
+    <block wx:if='{{type == "top250"}}'>
+      <view class='item' wx:for="{{top250Data.data}}" wx:key="{{index}}" data-id='{{item.id}}' bindtap="fileDetail">
+        <view class='rank'>
+          <text class='yellow-background'>No.{{index+1}}</text>
+        </view>
+        <view class='content'>
+          <view class='img-div'>
+            <image src="{{item.images.small}}"/>
+          </view>
+          <view class='item-content'>
+            <view class='file-name'> <text class='iconfont icon-movie'></text>{{item.title}}</view>
+            <starts stars='{{item.rating.stars}}' average='{{item.rating.average}}'/>
+            <view class='file-info'>{{item.year}} /
+              <block wx:for='{{item.genres}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem}}
+              </block> / 
+              <block block wx:for='{{item.directors}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block> / 
+              <block block wx:for='{{item.casts}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block>
+            </view>
+            <view class='file-collect-count'>{{item.collect_count}}人看过</view>
+          </view>
+        </view>
+      </view>
+    </block>
+     <block wx:elif='{{type == "publicPraise"}}'>
+      <view class='item' wx:for="{{publicPraiseData.data}}" wx:key="{{index}}" data-id='{{item.subject.id}}' bindtap="fileDetail">
+        <view class='rank'>
+          <text class='gray-background'>No.{{item.rank}}<text class='iconfont icon-{{item.delta < 0 ? "down down":item.delta > 0 ? "up up":"event event"}}'></text>{{item.delta < 0 ? -item.delta:item.delta}}</text>
+        </view>
+        <view class='content'>
+          <view class='img-div'>
+            <image src="{{item.subject.images.small}}"/>
+          </view>
+          <view class='item-content'>
+            <view class='file-name'> <text class='iconfont icon-movie'></text>{{item.subject.title}}</view>
+            <starts stars='{{item.subject.rating.stars}}' average='{{item.subject.rating.average}}'/>
+            <view class='file-info'>{{item.subject.year}} /
+              <block wx:for='{{item.subject.genres}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem}}
+              </block> / 
+              <block block wx:for='{{item.subject.directors}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block> / 
+              <block block wx:for='{{item.subject.casts}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block>
+            </view>
+            <view class='file-collect-count'>{{item.subject.collect_count}}人看过</view>
+          </view>
+        </view>
+      </view>
+    </block>
+     <block wx:elif='{{type == "usBox"}}'>
+       <view class='item' wx:for="{{usBoxData.data}}" wx:key="{{index}}" data-id='{{item.subject.id}}' bindtap="fileDetail">
+        <view class='rank'>
+          <text class='gray-background'>No.{{index+1}}</text>
+        </view>
+        <view class='content'>
+          <view class='img-div'>
+            <image src="{{item.subject.images.small}}"/>
+          </view>
+          <view class='item-content'>
+            <view class='file-name'> <text class='iconfont icon-movie'></text>{{item.subject.title}}</view>
+            <starts stars='{{item.subject.rating.stars}}' average='{{item.subject.rating.average}}'/>
+            <view class='file-info'>{{item.subject.year}} /
+              <block wx:for='{{item.subject.genres}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem}}
+              </block> / 
+              <block block wx:for='{{item.subject.directors}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block> / 
+              <block block wx:for='{{item.subject.casts}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block>
+            </view>
+             <view class='file-collect-count'>{{item.box}}美元</view>
+          </view>
+        </view>
+      </view>
+    </block>
+     <block wx:else='{{type == "newMovies"}}'>
+      <view class='item' wx:for="{{newMoviesData.data}}" wx:key="{{index}}" data-id='{{item.id}}' bindtap="fileDetail">
+        <view class='rank'>
+          <text class='gray-background'>No.{{index+1}}</text>
+        </view>
+        <view class='content'>
+          <view class='img-div'>
+            <image src="{{item.images.small}}"/>
+          </view>
+          <view class='item-content'>
+            <view class='file-name'> <text class='iconfont icon-movie'></text>{{item.title}}</view>
+            <starts stars='{{item.rating.stars}}' average='{{item.rating.average}}'/>
+            <view class='file-info'>
+             <block wx:for='{{item.pubdates}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem}} / 
+              </block>
+              <block wx:for='{{item.genres}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem}}
+              </block> / 
+              <block block wx:for='{{item.directors}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block> / 
+              <block block wx:for='{{item.casts}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block>
+            </view>
+             <view class='file-collect-count'>{{item.collect_count}}人看过</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  </view>
+</view>

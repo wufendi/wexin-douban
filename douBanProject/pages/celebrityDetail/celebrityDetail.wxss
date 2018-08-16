@@ -1,0 +1,83 @@
+/* pages/celebrityDetail/celebrityDetail.wxss */
+view, image {
+  box-sizing: border-box;
+}
+.font-large{
+  font-size: 16px;
+}
+.font-bold{
+  font-weight: bold;
+}
+.font-middle-bold{
+  font-weight: 400;
+}
+.margin-bottom-20{
+  margin-bottom: 20rpx;
+}
+.title{
+  margin: 20rpx 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.eclipse-4{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  display:-webkit-box;  
+  -webkit-box-orient:vertical; 
+}
+.container{
+  padding: 10px;
+}
+.top{
+  display: flex;
+}
+.top image{
+  width:320rpx;
+  border-radius: 10rpx;
+  margin-right: 30rpx;
+}
+.top>view>view.margin-bottom-20{
+  margin-bottom: 20rpx;
+}
+.top>view>view{
+  margin-bottom: 10rpx;
+}
+/*影视*/
+.works-container{
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+}
+.works-container .works-item{
+  margin-right: 15rpx;
+  width: 270rpx;
+}
+.works-container .works-item view{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space:nowrap;
+  margin: 10rpx 0;
+}
+.works-container .works-item image{
+  width: 270rpx;
+  height:359rpx;
+  border-radius:5px;
+}
+/*剧照*/
+.stage-container{
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  height:350rpx;
+}
+.stage-container .stage-item{
+  margin-right: 15rpx;
+}
+.stage-container .stage-item image{
+  width: 350rpx;
+  height:350rpx;
+}

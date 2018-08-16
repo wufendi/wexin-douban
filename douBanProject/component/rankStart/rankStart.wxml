@@ -1,0 +1,9 @@
+<!--component/rankStart/rankStart.wxml-->
+<view class='container'>
+  <view>
+     <view wx:for="{{startArray}}" wx:key="{{index}}" class='iconfont icon-star'></view>
+  </view>
+  <view>
+    <view class='yellow-bg' style='width:{{rateString}}'></view>
+  </view>
+</view>

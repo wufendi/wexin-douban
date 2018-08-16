@@ -1,0 +1,57 @@
+/**app.wxss**/
+@font-face {
+  font-family: 'iconfont';  /* project id 665006 */
+  src: url('//at.alicdn.com/t/font_665006_3yreuvobwjo.eot');
+  src: url('//at.alicdn.com/t/font_665006_3yreuvobwjo.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_665006_3yreuvobwjo.woff') format('woff'),
+  url('//at.alicdn.com/t/font_665006_3yreuvobwjo.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_665006_3yreuvobwjo.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-like:before{
+content: "\e604";
+}
+.icon-arrow-r:before{
+content: "\e724";
+}
+.icon-up:before{
+content: "\e726";
+}
+.icon-down:before{
+content: "\e727";
+}
+.icon-event:before{
+content: "\e734";
+}
+.icon-star:before{
+content: "\e83b";
+}
+.icon-half-star:before{
+content: "\e839";
+}
+.icon-empty-star:before{
+content: "\e75b";
+}
+.icon-movie:before{
+  content: '\e679';
+}
+.icon-search:before{
+  content: '\e60a';
+}
+.icon-close:before{
+  content: '\e720';
+}
+page {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 12px;
+} 
+.yellow{
+  color:#ffb712;
+}

@@ -1,0 +1,45 @@
+<!--pages/search/search.wxml-->
+<view class='container'>
+  <view class='search'>
+    <text class='iconfont icon-search'></text>
+    <input placeholder='搜索' bindinput="bindKeywords" value='{{keywords}}' auto-focus></input>
+    <text class='iconfont icon-close' wx:if='{{keywords}}' bindtap='bindDeleteKeywords' bindblur='bindKeywordsBlur'></text>
+  </view>
+  <view class='content'>
+    <block wx:if='{{!keywords}}'>
+      <view wx:if='{{!keywords && historyData.length > 0}}' class='search-history' bindtap='bindSearchHistory'>
+        <view class='title'>历史记录</view>
+        <view class='history-item' wx:for='{{historyData}}' data-keyword='{{item}}'>
+            {{item}}
+            <text class='iconfont icon-close' data-keyword='{{item}}' data-cancel='{{true}}'></text>
+        </view>
+      </view>
+      <view class='title'>类型搜索</view>
+      <view class='hot-search-list' bindtap='bindSearchTag'>
+        <text wx:for='{{tags}}' data-tag='{{item}}'>{{item}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='result-content'>
+        <view class='item' wx:for='{{resultData}}' data-id='{{item.id}}' bindtap="fileDetail">
+          <view class='img-div'><image src="{{item.images.small}}"/></view>
+          <view class='item-content'>
+            <view class='film-name'><text class='iconfont icon-movie'></text>{{item.title}}</view>
+            <starts stars='{{item.rating.stars}}' average='{{item.rating.average}}'/>
+            <view class='file-info'>{{item.year}} /
+              <block wx:for='{{item.genres}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem}}
+              </block> / 
+              <block block wx:for='{{item.directors}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block> / 
+              <block block wx:for='{{item.casts}}' wx:key="{{subindex}}" wx:for-item='subItem'>
+                {{subItem.name}}
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

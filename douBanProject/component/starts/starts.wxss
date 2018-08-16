@@ -1,0 +1,17 @@
+/* component/starts/starts.wxss */
+@import "../../app.wxss";
+.iconfont{
+  font-size: 14px;
+  color:rgb(218,218,218);
+}
+.yellow{
+  color:#ffb712;
+}
+.rank{
+  font-size: 14px;
+  margin-left: 5px;
+}
+.gray{
+  color:rgb(218,218,218);
+  font-size: 14px;
+}

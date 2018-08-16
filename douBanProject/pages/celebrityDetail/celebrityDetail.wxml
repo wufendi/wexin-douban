@@ -1,0 +1,35 @@
+<!--pages/celebrityDetail/celebrityDetail.wxml-->
+<view class='container'>
+  <view class='top'>
+     <image mode='widthFix' src='{{topImgUrl}}'></image>
+     <view>
+      <view class='font-large font-bold'>{{name}}</view>
+      <view class='font-middle-bold margin-bottom-20' >{{name_en}}</view>
+      <view>性别：{{gender}}</view>
+      <view>星座：{{constellation}}</view>
+      <view>出生日期：{{birthday}}</view>
+      <view>出生地：{{born_place}}</view>
+      <view>职业：{{professions}}</view>
+      <view>更多中文名：{{aka}}</view>
+      <view>更多英文名：{{aka_en}}</view>
+     </view>
+  </view>
+  <view class='title'>简介</view>
+  <view class='{{summaryClass}}' ontap='summaryTap'>
+    {{summary}}
+  </view>
+  <view class='title'>影视</view>
+  <view class='works-container'>
+    <view class='works-item' wx:for='{{works}}' data-id='{{item.subject.id}}' bindtap="fileDetail">
+      <image src='{{item.subject.images.small}}'></image>
+      <view>{{item.subject.title}}</view>
+      <starts stars='{{item.subject.rating.stars}}' average='{{item.subject.rating.average}}'/>
+    </view>
+  </view>
+  <view class='title'>相册</view>
+  <view class='stage-container'>
+    <view class='stage-item' wx:for='{{photos}}'>
+      <image src='{{item.cover}}'></image>
+    </view>
+  </view>
+</view>

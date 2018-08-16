@@ -1,0 +1,117 @@
+/* pages/rankList/rankList.wxss */
+.container{
+  font-size: 14px;
+  position: relative;
+}
+
+.tab{
+  box-sizing: border-box;
+  font-size: 16px;
+  padding:20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  width:100%;
+  left:0;
+  right:0;
+  top:0;
+  background: #fff;
+}
+.tab>text{
+  padding: 20rpx;
+  color: #072;
+}
+.tab>text.active{
+  background: #072;
+  color:#fff;
+}
+.tab>text.active{
+  background: #072;
+  color:#fff;
+}
+.container-content{
+  padding-top: 110rpx;
+  padding-bottom: 10rpx;
+}
+.item{
+   margin-left: 20rpx;
+   padding: 20rpx 20rpx 20rpx 0;
+   border-bottom: 1px solid gray;
+}
+.item:last-of-type{
+   border-bottom: none;
+}
+
+.item .rank{
+  padding-bottom: 20rpx;
+   color:#fff;
+}
+.item .rank>text{
+  padding: 5rpx 15rpx;
+  
+  border-radius: 5rpx;
+}
+.yellow-background{
+  background: #e09015;
+}
+.gray-background{
+  background: #eee;
+}
+.item .rank .iconfont{
+  margin-left: 20rpx;
+  margin-right: 5rpx;
+  font-weight: bold;
+}
+.item .rank .up{
+  color:rgb(255, 113, 155);
+}
+.item .rank .down{
+  color:rgb(92, 145, 252);
+}
+.item .rank .event{
+  color:#fff;
+}
+
+.item .content{
+  display: flex;
+}
+.item .img-div{
+  width: 180rpx;
+}
+.img-div image{
+  width: 180rpx;
+  height: 265rpx;
+  border-radius: 10rpx;
+}
+.item .item-content{
+  margin-left: 20rpx;
+  align-self: center;
+  flex-grow:500rpx;
+  font-size: 12px;
+}
+.item-content .file-name{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.item-content .file-info{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    display:-webkit-box;  
+    -webkit-box-orient:vertical; 
+}
+.item-content .file-collect-count{
+  background: #eee;
+  margin-top: 10rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 5rpx;
+}
+.icon-movie{
+  margin-right: 10rpx;
+  color: red;
+}

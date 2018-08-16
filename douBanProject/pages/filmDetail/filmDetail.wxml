@@ -1,0 +1,96 @@
+<!--pages/filmDetail/fileDetail.wxml-->
+<view class='container'>
+  <view class='intro'>
+    <image mode='widthFix' src='{{topImgUrl}}'></image>
+    <view>
+      <view class='font-large white-color'>{{title}}</view>
+      <view class='white-color'>{{original_title}} ({{year}})</view>
+      <view class='desc'>
+        <block wx:for='{{genres}}'>{{item}} </block>\
+        <block wx:for='{{countries}}'>{{item}} </block>\
+        <block>{{pubdates[0]}} 上映</block>\
+        <block>片长 {{durations[0]}}</block>
+      </view>
+      <view class='operate'>
+        <text> <text class='iconfont icon-like yellow'></text> 想看</text>
+        <text> <text class='iconfont icon-empty-star yellow'></text> 看过</text>
+      </view>
+    </view>
+  </view>
+  <view class='grade'>
+    <view>豆瓣评分</view>
+    <view class='grade-content'>
+      <view>
+       <view class='font-big align-center'>{{rating.average}}</view>
+        <starts stars='{{rating.stars}}' average='{{rating.average}}' rankShow='{{false}}'/>
+       </view>
+       <view class='rank-container'>
+        <view class='rank-list'>
+          <block  wx:for='{{rating.details}}'>
+             <rankstart startRank='{{item.key}}' rate='{{item.rate}}'/>
+          </block>
+        </view>
+        <view class='text-right font-small'>{{ratings_count}}人评分</view> 
+       </view>
+    </view>
+  </view>
+  <view class='middle'>
+      <view class='can-watch'>
+        <view><text class='iconfont icon-movie'></text>  观看全片 </view>
+        <view class='video-img'><block wx:for='{{videos}}'><image src='{{item.source.pic}}'></image></block><text class='iconfont icon-arrow-r'></text></view>
+      </view>
+      <view class='tags'>
+        <text>所属频道</text>
+        <text wx:for='{{tags}}' class='tag'>{{item}}</text>
+      </view>
+      <view class='title'>简介</view>
+      <view class='{{summaryClass}} white-color' ontap='summaryTap'>
+       {{summary}}
+      </view>
+      <view class='title'>
+        影人
+      </view>
+      <view class='role-container'>
+        <view class='role-item' wx:for='{{directors}}' data-id='{{item.id}}' bindtap="celebrityDetail">
+          <image src='{{item.avatars.small}}'></image>
+          <view>{{item.name}} </view>
+          <view>导演</view>
+        </view>
+        <view class='role-item' wx:for='{{casts}}' data-id='{{item.id}}' bindtap="celebrityDetail">
+          <image src='{{item.avatars.small}}'></image>
+          <view>{{item.name}} </view>
+          <view>演员</view>
+        </view>
+      </view>
+      <view class='title'>
+       剧照
+      </view>
+      <view class='stage-container'>
+        <view class='stage-item' wx:for='{{photos}}'>
+          <image src='{{item.cover}}'></image>
+        </view>
+        <view class='stage-item stage-item-more'>
+          <view>
+            <view>全部剧照</view>
+            <view>{{photos_count}}张</view>
+          </view>
+        </view>
+      </view>
+      <view class='review-container'>
+         <view class='review-top'>
+          <text class='white-color font-large'> 短评</text>
+          <text class='gray-color'>全部{{comments_count}}<text class='iconfont icon-arrow-r'></text></text>
+        </view>
+        <view class='review-item' wx:for='{{popular_reviews}}'>
+          <view class='user-info'>
+            <image src='{{item.author.avatar}}'></image>
+            <text class='user-name'>{{item.author.name}}</text>
+            <starts stars='{{item.rating.value*10}}' average='{{item.rating.value*2}}' rankShow='{{false}}' class='inline-block'/>
+          </view>
+          <view class='user-content'>
+            {{item.summary}}
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

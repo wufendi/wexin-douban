@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/rankList/rankList",
+    "pages/filmDetail/filmDetail",
+    "pages/celebrityDetail/celebrityDetail",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarTitleText": "Demo"
+  },
+  "tabBar": {
+    "selectedColor": "#072",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "imgs/coming_icon.png",
+        "selectedIconPath": "imgs/coming_active_icon.png"
+      },
+      {
+        "pagePath": "pages/rankList/rankList",
+        "text": "排行榜",
+        "iconPath": "imgs/top_icon.png",
+        "selectedIconPath": "imgs/top_active_icon.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "imgs/search_icon.png",
+        "selectedIconPath": "imgs/search_active_icon.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
