@@ -2,5 +2,4 @@
 
 ## 效果图
 ![](./img/a.gif)
-![](./img/a.gif)
-![](./img/a.gif)
+![](./img/b.gif)
