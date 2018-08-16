@@ -72,5 +72,5 @@ app.use(apiproxy);
 app.use('/v2/movie/subject/:id',proxy({target: defaultTarget, changeOrigin: true})); // 电影详情
 app.use('/v2/movie/celebrity/:id',proxy({target: defaultTarget, changeOrigin: true})); // 影人详情
 app.listen(5000, () => {
-    console.log("port on 5000")
+    console.log("开始监听 port on 5000")
 });
